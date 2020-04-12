@@ -1,0 +1,53 @@
+{
+  "name": "@arkitektjs/console",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "build": "tsc",
+    "docs:json": "typedoc --json dist/docs.json ./src --tsconfig tsconfig.json --mode modules --exclude **/*.json",
+    "lint": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc",
+    "lint:fix": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc --fix",
+    "test": "jest --passWithNoTests",
+    "test:coveralls": "jest --coverage --passWithNoTests --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --collectCoverage --passWithNoTests",
+    "test:watch": "jest --passWithNoTests --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arkitektjs/console.git"
+  },
+  "keywords": [
+    "arkitekt",
+    "rest",
+    "graphql",
+    "request",
+    "response",
+    "client",
+    "server",
+    "browser",
+    "node"
+  ],
+  "author": "Franck DIOMANDE <fkdiomande@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arkitektjs/console/issues"
+  },
+  "homepage": "https://github.com/Arkitektjs/console#readme",
+  "devDependencies": {
+    "@types/eslint": "^6.8.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "tsc-watch": "^4.2.3",
+    "typedoc": "^0.17.4",
+    "typescript": "^3.8.3"
+  }
+}
