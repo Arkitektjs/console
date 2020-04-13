@@ -17,6 +17,7 @@
   "rules": {
     "no-shadow": ["off"],
     "no-undef": ["off"],
+    "no-return-await": ["off"],
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "import/extensions": ["off"],
     "import/no-unresolved": ["off"],

@@ -1,4 +1,4 @@
-import { ConsoleRequest } from '../src/ConsoleRequest';
+import { ConsoleRequest } from '../src/Request/ConsoleRequest';
 
 describe('ConsoleRequest', () => {
   const request = new ConsoleRequest();

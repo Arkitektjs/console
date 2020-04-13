@@ -1,5 +1,3 @@
-import { ConsoleRequestInterface, OptionType } from './ConsoleRequestInterface';
-
 /**
  * Parse console request values.
  *
@@ -8,7 +6,9 @@ import { ConsoleRequestInterface, OptionType } from './ConsoleRequestInterface';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      let request = new Request();
+ *      import { ConsoleRequest } from '@arkitektjs/console';
+ *
+ *      let request = new ConsoleRequest();
  *
  *      // Get help
  *      request.parse(['-h']);
@@ -32,7 +32,7 @@ import { ConsoleRequestInterface, OptionType } from './ConsoleRequestInterface';
  *      console.log(request.hasSubCommands()); // true
  *      console.log(request.getSubCommands()); // ['sub1', 'sub2']
  */
-class ConsoleRequest implements ConsoleRequestInterface {
+class ConsoleRequest implements Console.Request.Interface {
   /**
    * Parsed command.
    */
@@ -43,17 +43,17 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Parsed options.
    */
-  private _options: OptionType = {};
+  private _options: Console.Request.OptionType = {};
 
   /**
    * Parsed long options.
    */
-  private _longOptions: OptionType = {};
+  private _longOptions: Console.Request.OptionType = {};
 
   /**
    * Parsed short options
    */
-  private _shortOptions: OptionType = {};
+  private _shortOptions: Console.Request.OptionType = {};
 
   /**
    * Parsed console arguments.
@@ -73,7 +73,7 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Set command.
    */
-  public setCommand(command: string | null): ConsoleRequest {
+  public setCommand(command: string | null): this {
     if (!command) {
       return this;
     }
@@ -118,7 +118,7 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Set options.
    */
-  public setOptions(options: OptionType): ConsoleRequest {
+  public setOptions(options: Console.Request.OptionType): this {
     this._options = options;
 
     return this;
@@ -127,12 +127,12 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Get options.
    */
-  public getOptions(): OptionType {
+  public getOptions(): Console.Request.OptionType {
     return this._options;
   }
 
   /**
-   * Get options.
+   * Get option.
    */
   public getOption(option: string): (string | boolean)[] {
     return this._options[option];
@@ -141,7 +141,7 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Add option.
    */
-  public addOption(option: string, value: string | boolean): ConsoleRequest {
+  public addOption(option: string, value: string | boolean): this {
     if (this._longOptionReg.test(option) || this._shortOptionReg.test(option)) {
       if (!Object.prototype.hasOwnProperty.call(this._options, option)) {
         this._options[option] = [];
@@ -178,14 +178,14 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Set arguments.
    */
-  public setArguments(args: string[]): ConsoleRequest {
+  public setArguments(args: string[]): this {
     this._consoleArgs = args;
 
     return this;
   }
 
   /**
-   * get arguments.
+   * Get arguments.
    */
   public getArguments(): string[] {
     return this._consoleArgs;
@@ -194,7 +194,7 @@ class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Parses arguments.
    */
-  public parse(args: string[]): ConsoleRequest {
+  public parse(args: string[]): this {
     this.resetDefaultValues();
 
     const consoleArgs: string[] = [];

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
     "build": "tsc",
-    "docs:json": "typedoc --json dist/docs.json ./src --tsconfig tsconfig.json --mode modules --exclude **/*.json",
+    "docs:json": "typedoc",
     "lint": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc",
     "lint:fix": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc --fix",
     "test": "jest --passWithNoTests",
@@ -49,5 +49,8 @@
     "tsc-watch": "^4.2.3",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.5"
   }
 }
