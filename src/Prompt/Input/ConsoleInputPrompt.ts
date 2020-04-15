@@ -1,8 +1,13 @@
 import { ConsoleAbstractPrompt } from '../ConsoleAbstractPrompt';
-
+import { ConsolePromptQuestionType, MessageValueType } from '../console.prompt';
+import {
+  InitialValueType,
+  ConsoleInputPromptQuestionType,
+  ConsoleInputPromptInterface,
+} from './console.input.prompt';
 
 /**
- * Console input prompt.
+ * Input console prompt.
  *
  * @version 1.0.0
  * @since 1.0.0
@@ -11,19 +16,51 @@ import { ConsoleAbstractPrompt } from '../ConsoleAbstractPrompt';
  * @example
  *      import { ConsoleInputPrompt } from '@arkitektjs/console';
  *
- *      const input: ConsoleInputPrompt = new ConsoleInputPrompt();
+ *      const input: ConsoleInputPrompt = new ConsoleInputPrompt('What your name?');
  *
- *      input.setName('name');
- *      input.setMessage('What your name?');
  *      input.onSuccess((answer) => {
- *        console.log(answer); // { name: 'John' }
+ *        console.log(answer); // { prompt: 'John' }
  *      });
  *      input.prompt();
  */
-class ConsoleInputPrompt extends ConsoleAbstractPrompt {
-  constructor() {
+class ConsoleInputPrompt extends ConsoleAbstractPrompt implements ConsoleInputPromptInterface {
+  /**
+   * Question type for input prompt.
+   */
+  protected _question: ConsolePromptQuestionType & ConsoleInputPromptQuestionType;
+
+  /**
+   * Constructor.
+   *
+   * @param message - Message to display when the prompt is rendered in the terminal.
+   */
+  constructor(message: MessageValueType) {
     super();
-    this.setType('input');
+    this._question = {
+      ...super._question,
+      type: 'input',
+      name: 'prompt',
+      message,
+      initial: '',
+    };
+  }
+
+  /**
+   * Get default value to return if the user does not supply a value.
+   */
+  public getInitialValue(): InitialValueType {
+    return this._question.initial;
+  }
+
+  /**
+   * Set default value to return if the user does not supply a value.
+   *
+   * @param initialValue - Default value.
+   */
+  public setInitialValue(initialValue: InitialValueType): this {
+    this._question.initial = initialValue;
+
+    return this;
   }
 }
 

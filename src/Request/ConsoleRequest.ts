@@ -1,3 +1,5 @@
+import { ConsoleRequestInterface, ConsoleRequestOptionType } from './console.request';
+
 /**
  * Parse console request values.
  *
@@ -32,7 +34,7 @@
  *      console.log(request.hasSubCommands()); // true
  *      console.log(request.getSubCommands()); // ['sub1', 'sub2']
  */
-class ConsoleRequest implements Console.Request.Interface {
+class ConsoleRequest implements ConsoleRequestInterface {
   /**
    * Parsed command.
    */
@@ -43,17 +45,17 @@ class ConsoleRequest implements Console.Request.Interface {
   /**
    * Parsed options.
    */
-  private _options: Console.Request.OptionType = {};
+  private _options: ConsoleRequestOptionType = {};
 
   /**
    * Parsed long options.
    */
-  private _longOptions: Console.Request.OptionType = {};
+  private _longOptions: ConsoleRequestOptionType = {};
 
   /**
    * Parsed short options
    */
-  private _shortOptions: Console.Request.OptionType = {};
+  private _shortOptions: ConsoleRequestOptionType = {};
 
   /**
    * Parsed console arguments.
@@ -118,7 +120,7 @@ class ConsoleRequest implements Console.Request.Interface {
   /**
    * Set options.
    */
-  public setOptions(options: Console.Request.OptionType): this {
+  public setOptions(options: ConsoleRequestOptionType): this {
     this._options = options;
 
     return this;
@@ -127,7 +129,7 @@ class ConsoleRequest implements Console.Request.Interface {
   /**
    * Get options.
    */
-  public getOptions(): Console.Request.OptionType {
+  public getOptions(): ConsoleRequestOptionType {
     return this._options;
   }
 

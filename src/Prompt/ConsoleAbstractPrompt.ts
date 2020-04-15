@@ -1,4 +1,16 @@
 import { prompt as enquirerPrompt } from 'enquirer';
+import {
+  ConsolePromptInterface,
+  ConsolePromptQuestionType,
+  MessageValueType,
+  NameValueType,
+  OnErrorCallbackType,
+  OnInputCallbackType,
+  OnSubmitCallbackType,
+  OnSuccessCallbackType,
+  TypeValueType,
+  ValidatorCallbackType,
+} from './console.prompt';
 
 /**
  * Prompt base class.
@@ -8,44 +20,52 @@ import { prompt as enquirerPrompt } from 'enquirer';
  * @author
  *    name: Franck DIOMANDE
  */
-abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
+abstract class ConsoleAbstractPrompt implements ConsolePromptInterface {
   /**
-   * Stores current question.
+   * Question type for base prompt.
    */
-  protected _question: Console.Prompt.QuestionType = {
-    type: '',
-    name: '',
-    message: '',
-    initial: '',
-    format: undefined,
-    result: undefined,
-    validate: undefined,
-  };
+  protected _question: ConsolePromptQuestionType;
 
   /**
    * Stores success callback.
    */
-  protected _onSuccess: Console.Prompt.OnSuccessCallbackType = null;
+  protected _onSuccess: OnSuccessCallbackType;
 
   /**
    * Stores error callback.
    */
-  protected _onError: Console.Prompt.OnErrorCallbackType = null;
+  protected _onError: OnErrorCallbackType;
+
+  /**
+   * Constructor.
+   */
+  protected constructor() {
+    this._question = {
+      type: 'input',
+      name: 'prompt',
+      message: '',
+      format: undefined,
+      result: undefined,
+      validate: undefined,
+    };
+    this._onSuccess = null;
+    this._onError = null;
+  }
 
   /**
    * Get type of prompt.
    */
-  public getType(): Console.Prompt.TypeValueType {
+  public getType(): TypeValueType {
     return this._question.type;
   }
 
   /**
-   * Set prompt type.
+   * Set type of prompt.
    *
-   * @param value - Prompt type.
+   * @param type - Type of prompt.
    */
-  protected setType(value: Console.Prompt.TypeValueType): this {
-    this._question.type = value;
+  protected setType(type: TypeValueType): this {
+    this._question.type = type;
 
     return this;
   }
@@ -54,17 +74,17 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    * Get key for answer.
    * Used as the key for the answer on the returned values (answers) object.
    */
-  public getName(): Console.Prompt.NameValueType {
+  public getName(): NameValueType {
     return this._question.name;
   }
 
   /**
    * Set key for answer.
    *
-   * @param value - Used as the key for the answer on the returned values (answers) object.
+   * @param name - Used as the key for the answer on the returned values (answers) object.
    */
-  public setName(value: Console.Prompt.NameValueType): this {
-    this._question.name = value;
+  public setName(name: NameValueType): this {
+    this._question.name = name;
 
     return this;
   }
@@ -72,35 +92,17 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get message to display when the prompt is rendered in the terminal.
    */
-  public getMessage(): Console.Prompt.MessageValueType {
+  public getMessage(): MessageValueType {
     return this._question.message;
   }
 
   /**
    * Set message to display when the prompt is rendered in the terminal.
    *
-   * @param value - Message to display.
+   * @param message - Message to display.
    */
-  public setMessage(value: Console.Prompt.MessageValueType): this {
-    this._question.message = value;
-
-    return this;
-  }
-
-  /**
-   * Get  default value to return if the user does not supply a value.
-   */
-  public getDefaultValue(): Console.Prompt.DefaultValueType {
-    return this._question.initial;
-  }
-
-  /**
-   * Set  default value to return if the user does not supply a value.
-   *
-   * @param value - Default value.
-   */
-  public setDefaultValue(value: Console.Prompt.DefaultValueType): this {
-    this._question.initial = value;
+  public setMessage(message: MessageValueType): this {
+    this._question.message = message;
 
     return this;
   }
@@ -110,7 +112,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param callback - Formatting function in the terminal.
    */
-  public onInput(callback: Console.Prompt.OnInputCallbackType): this {
+  public onInput(callback: OnInputCallbackType): this {
     this._question.format = callback;
 
     return this;
@@ -119,7 +121,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get function to use to format user input in the terminal.
    */
-  public getInputCallback(): Console.Prompt.OnInputCallbackType {
+  public getInputCallback(): OnInputCallbackType {
     return this._question.format;
   }
 
@@ -128,7 +130,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param callback - Formatting function for the final value.
    */
-  public onSubmit(callback: Console.Prompt.OnSubmitCallbackType): this {
+  public onSubmit(callback: OnSubmitCallbackType): this {
     this._question.result = callback;
 
     return this;
@@ -137,7 +139,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get function to use to format the final submitted value.
    */
-  public getSubmitCallback(): Console.Prompt.OnSubmitCallbackType {
+  public getSubmitCallback(): OnSubmitCallbackType {
     return this._question.result;
   }
 
@@ -148,7 +150,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param validator - Validator function.
    */
-  public setValidator(validator: Console.Prompt.ValidatorCallbackType): this {
+  public setValidator(validator: ValidatorCallbackType): this {
     this._question.validate = validator;
 
     return this;
@@ -157,7 +159,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get validator function.
    */
-  public getValidator(): Console.Prompt.ValidatorCallbackType {
+  public getValidator(): ValidatorCallbackType {
     return this._question.validate;
   }
 
@@ -166,7 +168,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param question - Question object.
    */
-  public setQuestion(question: Console.Prompt.QuestionType): this {
+  public setQuestion(question: ConsolePromptQuestionType): this {
     this._question = question;
 
     return this;
@@ -175,7 +177,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get current question object.
    */
-  public getQuestion(): Console.Prompt.QuestionType {
+  public getQuestion(): ConsolePromptQuestionType {
     return this._question;
   }
 
@@ -184,7 +186,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param callback - Success callback.
    */
-  public onSuccess(callback: Console.Prompt.OnSuccessCallbackType): this {
+  public onSuccess(callback: OnSuccessCallbackType): this {
     this._onSuccess = callback;
 
     return this;
@@ -193,7 +195,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get success callback.
    */
-  public getSuccessCallback(): Console.Prompt.OnSuccessCallbackType {
+  public getSuccessCallback(): OnSuccessCallbackType {
     return this._onSuccess;
   }
 
@@ -202,7 +204,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
    *
    * @param callback
    */
-  public onError(callback: Console.Prompt.OnErrorCallbackType): this {
+  public onError(callback: OnErrorCallbackType): this {
     this._onError = callback;
 
     return this;
@@ -211,7 +213,7 @@ abstract class ConsoleAbstractPrompt implements Console.Prompt.Interface {
   /**
    * Get error callback.
    */
-  public getErrorCallback(): Console.Prompt.OnErrorCallbackType {
+  public getErrorCallback(): OnErrorCallbackType {
     return this._onError;
   }
 
