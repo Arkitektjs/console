@@ -39,7 +39,7 @@ class ConsoleInputPrompt extends ConsoleAbstractPrompt implements ConsoleInputPr
     this._question = {
       ...super._question,
       type: 'input',
-      name: 'prompt',
+      name: 'answer',
       message,
       initial: '',
     };

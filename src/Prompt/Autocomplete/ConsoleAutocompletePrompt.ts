@@ -48,7 +48,7 @@ class ConsoleAutocompletePrompt extends ConsoleAbstractPrompt implements Console
     this._question = {
       ...super._question,
       type: 'autocomplete',
-      name: 'prompt',
+      name: 'answer',
       message,
       initial: 0,
       limit: 10,

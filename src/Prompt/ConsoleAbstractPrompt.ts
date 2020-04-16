@@ -42,7 +42,7 @@ abstract class ConsoleAbstractPrompt implements ConsolePromptInterface {
   protected constructor() {
     this._question = {
       type: 'input',
-      name: 'prompt',
+      name: 'answer',
       message: '',
       format: undefined,
       result: undefined,
