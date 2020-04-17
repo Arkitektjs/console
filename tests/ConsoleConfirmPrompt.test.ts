@@ -1,6 +1,6 @@
 import { ConsoleConfirmPrompt } from '../index';
 
-describe('ConsoleInputPrompt', () => {
+describe('ConsoleConfirmPrompt', () => {
   const confirm: ConsoleConfirmPrompt = new ConsoleConfirmPrompt('Are you ok?');
 
   test('type must be confirm', () => {
@@ -11,7 +11,7 @@ describe('ConsoleInputPrompt', () => {
     expect(confirm.getName()).toBe('answer');
   });
 
-  test('message must be: What your name?', () => {
+  test('message must be: Are you ok?', () => {
     expect(confirm.getMessage()).toBe('Are you ok?');
   });
 });
