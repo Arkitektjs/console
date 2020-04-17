@@ -7,7 +7,7 @@ describe('ConsoleListPrompt', () => {
     expect(confirm.getType()).toBe('list');
   });
 
-  test('name must be prompt', () => {
+  test('name must be answer', () => {
     expect(confirm.getName()).toBe('answer');
   });
 

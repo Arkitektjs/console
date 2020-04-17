@@ -39,9 +39,8 @@ class ConsoleBasicAuthPrompt extends ConsoleAbstractPrompt implements ConsoleBas
   constructor(message: MessageValueType) {
     super();
     this._question = {
-      ...super._question,
+      ...this.getQuestion(),
       type: 'basicauth',
-      name: 'answer',
       message,
       username: '',
       password: '',

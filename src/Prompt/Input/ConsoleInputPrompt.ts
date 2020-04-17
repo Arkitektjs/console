@@ -37,9 +37,8 @@ class ConsoleInputPrompt extends ConsoleAbstractPrompt implements ConsoleInputPr
   constructor(message: MessageValueType) {
     super();
     this._question = {
-      ...super._question,
+      ...this.getQuestion(),
       type: 'input',
-      name: 'answer',
       message,
       initial: '',
     };

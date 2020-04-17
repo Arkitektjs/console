@@ -47,6 +47,7 @@ abstract class ConsoleAbstractPrompt implements ConsolePromptInterface {
       format: undefined,
       result: undefined,
       validate: undefined,
+      footer: null,
     };
     this._onSuccess = null;
     this._onError = null;

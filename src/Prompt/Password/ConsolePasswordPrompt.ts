@@ -2,23 +2,23 @@ import { ConsoleAbstractPrompt } from '../ConsoleAbstractPrompt';
 import { MessageValueType } from '../console.prompt';
 
 /**
- * List console prompt.
+ * Password console prompt.
  *
  * @version 1.0.0
  * @since 1.0.0
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleListPrompt } from '@arkitektjs/console';
+ *      import { ConsolePasswordPrompt } from '@arkitektjs/console';
  *
- *      const list: ConsoleListPrompt = new ConsoleListPrompt('Type comma-separated keywords');
+ *      const password: ConsolePasswordPrompt = new ConsolePasswordPrompt('What is your password?');
  *
- *      list.onSuccess((answer) => {
+ *      password.onSuccess((answer) => {
  *        console.log(answer);
  *      });
- *      list.prompt();
+ *      password.prompt();
  */
-class ConsoleListPrompt extends ConsoleAbstractPrompt {
+class ConsolePasswordPrompt extends ConsoleAbstractPrompt {
   /**
    * Constructor.
    *
@@ -28,10 +28,10 @@ class ConsoleListPrompt extends ConsoleAbstractPrompt {
     super();
     this._question = {
       ...this.getQuestion(),
-      type: 'list',
+      type: 'password',
       message,
     };
   }
 }
 
-export { ConsoleListPrompt };
+export { ConsolePasswordPrompt };

@@ -9,6 +9,8 @@ import { ConsoleAutocompletePromptInterface } from './src/Prompt/Autocomplete/co
 import { ConsoleBasicAuthPrompt } from './src/Prompt/BasicAuth/ConsoleBasicAuthPrompt';
 import { ConsoleBasicAuthPromptInterface } from './src/Prompt/BasicAuth/console.basic.auth.prompt';
 import { ConsoleConfirmPrompt } from './src/Prompt/Confirm/ConsoleConfirmPrompt';
+import { ConsoleNumeralPrompt } from './src/Prompt/Numeral/ConsoleNumeralPrompt';
+import { ConsolePasswordPrompt } from './src/Prompt/Password/ConsolePasswordPrompt';
 import { ConsoleListPrompt } from './src/Prompt/List/ConsoleListPrompt';
 import { ConsoleFormPrompt } from './src/Prompt/Form/ConsoleFormPrompt';
 import { ConsoleFormPromptInterface } from './src/Prompt/Form/console.form.prompt';
@@ -25,6 +27,8 @@ export {
   ConsoleBasicAuthPrompt,
   ConsoleBasicAuthPromptInterface,
   ConsoleConfirmPrompt,
+  ConsoleNumeralPrompt,
+  ConsolePasswordPrompt,
   ConsoleListPrompt,
   ConsoleFormPrompt,
   ConsoleFormPromptInterface,

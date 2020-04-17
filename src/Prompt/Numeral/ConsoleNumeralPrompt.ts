@@ -2,23 +2,23 @@ import { ConsoleAbstractPrompt } from '../ConsoleAbstractPrompt';
 import { MessageValueType } from '../console.prompt';
 
 /**
- * List console prompt.
+ * Numeral console prompt.
  *
  * @version 1.0.0
  * @since 1.0.0
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleListPrompt } from '@arkitektjs/console';
+ *      import { ConsoleNumeralPrompt } from '@arkitektjs/console';
  *
- *      const list: ConsoleListPrompt = new ConsoleListPrompt('Type comma-separated keywords');
+ *      const numeral: ConsoleNumeralPrompt = new ConsoleNumeralPrompt('Please enter a number');
  *
- *      list.onSuccess((answer) => {
+ *      numeral.onSuccess((answer) => {
  *        console.log(answer);
  *      });
- *      list.prompt();
+ *      numeral.prompt();
  */
-class ConsoleListPrompt extends ConsoleAbstractPrompt {
+class ConsoleNumeralPrompt extends ConsoleAbstractPrompt {
   /**
    * Constructor.
    *
@@ -28,10 +28,10 @@ class ConsoleListPrompt extends ConsoleAbstractPrompt {
     super();
     this._question = {
       ...this.getQuestion(),
-      type: 'list',
+      type: 'numeral',
       message,
     };
   }
 }
 
-export { ConsoleListPrompt };
+export { ConsoleNumeralPrompt };

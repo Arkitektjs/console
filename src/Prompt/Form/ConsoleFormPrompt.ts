@@ -39,9 +39,8 @@ class ConsoleFormPrompt extends ConsoleAbstractPrompt implements ConsoleFormProm
   constructor(message: MessageValueType) {
     super();
     this._question = {
-      ...super._question,
+      ...this.getQuestion(),
       type: 'form',
-      name: 'answer',
       message,
       choices: [],
     };

@@ -46,9 +46,8 @@ class ConsoleAutocompletePrompt extends ConsoleAbstractPrompt implements Console
   constructor(message: MessageValueType) {
     super();
     this._question = {
-      ...super._question,
+      ...this.getQuestion(),
       type: 'autocomplete',
-      name: 'answer',
       message,
       initial: 0,
       limit: 10,

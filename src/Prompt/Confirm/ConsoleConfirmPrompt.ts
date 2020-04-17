@@ -27,9 +27,8 @@ class ConsoleConfirmPrompt extends ConsoleAbstractPrompt {
   constructor(message: MessageValueType) {
     super();
     this._question = {
-      ...super._question,
+      ...this.getQuestion(),
       type: 'confirm',
-      name: 'answer',
       message,
     };
   }
