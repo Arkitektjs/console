@@ -18,7 +18,7 @@ import {
  * @example
  *      import { ConsoleBasicAuthPrompt } from '@arkitektjs/console';
  *
- *      const basicAuth: ConsoleBasicAuthPrompt = new ConsoleBasicAuthPrompt('What your name?');
+ *      const basicAuth: ConsoleBasicAuthPrompt = new ConsoleBasicAuthPrompt('Connexion:');
  *
  *      basicAuth.onSuccess((answer) => {
  *        console.log(answer);

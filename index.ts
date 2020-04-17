@@ -9,6 +9,8 @@ import { ConsoleAutocompletePromptInterface } from './src/Prompt/Autocomplete/co
 import { ConsoleBasicAuthPrompt } from './src/Prompt/BasicAuth/ConsoleBasicAuthPrompt';
 import { ConsoleBasicAuthPromptInterface } from './src/Prompt/BasicAuth/console.basic.auth.prompt';
 import { ConsoleConfirmPrompt } from './src/Prompt/Confirm/ConsoleConfirmPrompt';
+import { ConsoleFormPrompt } from './src/Prompt/Form/ConsoleFormPrompt';
+import { ConsoleFormPromptInterface } from './src/Prompt/Form/console.form.prompt';
 
 export {
   ConsoleRequest,
@@ -22,4 +24,6 @@ export {
   ConsoleBasicAuthPrompt,
   ConsoleBasicAuthPromptInterface,
   ConsoleConfirmPrompt,
+  ConsoleFormPrompt,
+  ConsoleFormPromptInterface,
 };
