@@ -73,7 +73,6 @@
     "node_modules"
   ],
   "files": [
-    "index.ts",
-    "toto.ts"
+    "index.ts"
   ]
 }

@@ -29,6 +29,11 @@ export type OnSubmitCallbackType = undefined | ((value: string) => string);
 export type ValidatorCallbackType = undefined | ((value: string) => string | boolean);
 
 /**
+ * Footer value type.
+ */
+export type FooterValueType = undefined | string;
+
+/**
  * On success callback type.
  */
 export type OnSuccessCallbackType = null | ((answer: object) => void);
@@ -84,6 +89,13 @@ export type ConsolePromptQuestionType = {
    * @default undefined
    */
   validate: ValidatorCallbackType;
+
+  /**
+   * Footer message.
+   *
+   * @default undefined
+   */
+  footer: FooterValueType;
 };
 
 /**

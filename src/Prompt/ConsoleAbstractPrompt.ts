@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors';
 import { prompt as enquirerPrompt } from 'enquirer';
 import {
   ConsolePromptInterface,
@@ -10,6 +11,7 @@ import {
   OnSuccessCallbackType,
   TypeValueType,
   ValidatorCallbackType,
+  FooterValueType,
 } from './console.prompt';
 
 /**
@@ -47,7 +49,7 @@ abstract class ConsoleAbstractPrompt implements ConsolePromptInterface {
       format: undefined,
       result: undefined,
       validate: undefined,
-      footer: null,
+      footer: undefined,
     };
     this._onSuccess = null;
     this._onError = null;
@@ -171,6 +173,24 @@ abstract class ConsoleAbstractPrompt implements ConsolePromptInterface {
    */
   public setQuestion(question: ConsolePromptQuestionType): this {
     this._question = question;
+
+    return this;
+  }
+
+  /**
+   * Get footer.
+   */
+  public getFooter(): FooterValueType {
+    return this._question.footer;
+  }
+
+  /**
+   * Set footer.
+   *
+   * @param footer - Footer value.
+   */
+  public setFooter(footer: string): this {
+    this._question.footer = ansiColors.dim(footer);
 
     return this;
   }

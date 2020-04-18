@@ -1,5 +1,6 @@
 import { ConsoleRequestInterface } from './src/Request/console.request';
 import { ConsoleRequest } from './src/Request/ConsoleRequest';
+import { ConsoleOutput } from './src/Output/ConsoleOutput';
 import { ConsolePromptInterface } from './src/Prompt/console.prompt';
 import { ConsoleAbstractPrompt } from './src/Prompt/ConsoleAbstractPrompt';
 import { ConsoleInputPrompt } from './src/Prompt/Input/ConsoleInputPrompt';
@@ -18,6 +19,7 @@ import { ConsoleFormPromptInterface } from './src/Prompt/Form/console.form.promp
 export {
   ConsoleRequest,
   ConsoleRequestInterface,
+  ConsoleOutput,
   ConsoleAbstractPrompt,
   ConsolePromptInterface,
   ConsoleInputPrompt,

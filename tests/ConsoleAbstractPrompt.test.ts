@@ -33,4 +33,8 @@ describe('ConsoleAbstractPrompt', () => {
   test('default validate/validator callback must be undefined', () => {
     expect(prompt.getValidator()).toBeUndefined();
   });
+
+  test('footer value must be undefined', () => {
+    expect(prompt.getFooter()).toBeUndefined();
+  });
 });
