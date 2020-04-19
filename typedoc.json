@@ -6,6 +6,5 @@
   "includeVersion": true,
   "disableSources": true,
   "includeDeclarations": true,
-  "excludeExternals": true,
-  "excludeTags": [""]
+  "excludeExternals": true
 }
