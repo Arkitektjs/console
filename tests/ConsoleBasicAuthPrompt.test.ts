@@ -8,7 +8,7 @@ describe('ConsoleBasicAuthPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(auth.getName()).toBe('answer');
+    expect(auth.getName()).toBe('basicauth');
   });
 
   test('message must be Connexion', () => {

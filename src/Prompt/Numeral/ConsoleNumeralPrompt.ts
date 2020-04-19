@@ -9,9 +9,9 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleNumeralPrompt } from '@arkitektjs/console';
+ *      import { ConsoleNumeralPrompt as Numeral } from '@arkitektjs/console';
  *
- *      const numeral: ConsoleNumeralPrompt = new ConsoleNumeralPrompt('Please enter a number');
+ *      const numeral: Numeral = new Numeral('Please enter a number');
  *
  *      numeral.onSuccess((answer) => {
  *        console.log(answer);
@@ -29,6 +29,7 @@ class ConsoleNumeralPrompt extends ConsoleAbstractPrompt {
     this._question = {
       ...this.getQuestion(),
       type: 'numeral',
+      name: 'numeral',
       message,
     };
   }

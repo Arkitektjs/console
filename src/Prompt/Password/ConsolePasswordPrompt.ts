@@ -9,9 +9,9 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsolePasswordPrompt } from '@arkitektjs/console';
+ *      import { ConsolePasswordPrompt as Password } from '@arkitektjs/console';
  *
- *      const password: ConsolePasswordPrompt = new ConsolePasswordPrompt('What is your password?');
+ *      const password: Password = new Password('What is your password?');
  *
  *      password.onSuccess((answer) => {
  *        console.log(answer);
@@ -29,6 +29,7 @@ class ConsolePasswordPrompt extends ConsoleAbstractPrompt {
     this._question = {
       ...this.getQuestion(),
       type: 'password',
+      name: 'password',
       message,
     };
   }

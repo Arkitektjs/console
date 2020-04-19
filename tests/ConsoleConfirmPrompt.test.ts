@@ -8,7 +8,7 @@ describe('ConsoleConfirmPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(confirm.getName()).toBe('answer');
+    expect(confirm.getName()).toBe('confirm');
   });
 
   test('message must be: Are you ok?', () => {

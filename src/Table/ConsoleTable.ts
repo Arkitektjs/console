@@ -1,8 +1,8 @@
 import os from 'os';
 
-import { ConsoleTableInterface as TableInterface } from './console.table';
-import { ConsoleTableRowInterface as RowInterface } from './Row/console.table.row';
-import { ConsoleTableColumnOptionsType as ColumnOptionsType } from './Column/console.table.column';
+import { ConsoleTableInterface } from './console.table';
+import { ConsoleTableRowInterface } from './Row/console.table.row';
+import { ConsoleTableColumnOptionsType } from './Column/console.table.column';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const UI = require('cliui');
@@ -35,11 +35,11 @@ const UI = require('cliui');
  *      table.addRow(row1);
  *      table.print();
  */
-class ConsoleTable implements TableInterface {
+class ConsoleTable implements ConsoleTableInterface {
   /**
    * Collection of rows.
    */
-  private _rows: RowInterface[];
+  private _rows: ConsoleTableRowInterface[];
 
   private _ui = new UI();
 
@@ -52,7 +52,7 @@ class ConsoleTable implements TableInterface {
    *
    * @param rows - List of rows to set.
    */
-  public setRows(rows: RowInterface[]): this {
+  public setRows(rows: ConsoleTableRowInterface[]): this {
     this._rows = rows;
 
     return this;
@@ -63,7 +63,7 @@ class ConsoleTable implements TableInterface {
    *
    * @param row - Row to add.
    */
-  public addRow(row: RowInterface): this {
+  public addRow(row: ConsoleTableRowInterface): this {
     this._rows.push(row);
 
     return this;
@@ -72,7 +72,7 @@ class ConsoleTable implements TableInterface {
   /**
    * Get rows.
    */
-  public getRows(): RowInterface[] {
+  public getRows(): ConsoleTableRowInterface[] {
     return this._rows;
   }
 
@@ -81,7 +81,7 @@ class ConsoleTable implements TableInterface {
    */
   public print(): this {
     this._rows.forEach((row) => {
-      const options: ColumnOptionsType[] = [];
+      const options: ConsoleTableColumnOptionsType[] = [];
 
       row.getColumns().forEach((column) => {
         options.push(column.getOptions());

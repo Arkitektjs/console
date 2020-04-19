@@ -1,5 +1,5 @@
-import { ConsoleTableRowInterface as RowInterface } from './console.table.row';
-import { ConsoleTableColumnInterface as ColumnInterface } from '../Column/console.table.column';
+import { ConsoleTableRowInterface } from './console.table.row';
+import { ConsoleTableColumnInterface } from '../Column/console.table.column';
 
 /**
  * Table row.
@@ -29,11 +29,11 @@ import { ConsoleTableColumnInterface as ColumnInterface } from '../Column/consol
  *      table.addRow(row1);
  *      table.print();
  */
-class ConsoleTableRow implements RowInterface {
+class ConsoleTableRow implements ConsoleTableRowInterface {
   /**
    * Collection of columns.
    */
-  private _columns: ColumnInterface[];
+  private _columns: ConsoleTableColumnInterface[];
 
   constructor() {
     this._columns = [];
@@ -44,7 +44,7 @@ class ConsoleTableRow implements RowInterface {
    *
    * @param columns - List of columns to set.
    */
-  public setColumns(columns: ColumnInterface[]): this {
+  public setColumns(columns: ConsoleTableColumnInterface[]): this {
     this._columns = columns;
 
     return this;
@@ -55,7 +55,7 @@ class ConsoleTableRow implements RowInterface {
    *
    * @param column - Column to add.
    */
-  public addColumn(column: ColumnInterface): this {
+  public addColumn(column: ConsoleTableColumnInterface): this {
     this._columns.push(column);
 
     return this;
@@ -64,7 +64,7 @@ class ConsoleTableRow implements RowInterface {
   /**
    * Get columns.
    */
-  public getColumns(): ColumnInterface[] {
+  public getColumns(): ConsoleTableColumnInterface[] {
     return this._columns;
   }
 }

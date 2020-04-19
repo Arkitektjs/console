@@ -9,7 +9,7 @@ describe('ConsoleFormPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(formPrompt.getName()).toBe('answer');
+    expect(formPrompt.getName()).toBe('form');
   });
 
   test('message must be: Please fill out this form:', () => {

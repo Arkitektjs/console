@@ -8,7 +8,7 @@ describe('ConsolePasswordPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(password.getName()).toBe('answer');
+    expect(password.getName()).toBe('password');
   });
 
   test('message must be: What is your password?', () => {

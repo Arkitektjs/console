@@ -16,9 +16,9 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleBasicAuthPrompt } from '@arkitektjs/console';
+ *      import { ConsoleBasicAuthPrompt as BasicAuth } from '@arkitektjs/console';
  *
- *      const basicAuth: ConsoleBasicAuthPrompt = new ConsoleBasicAuthPrompt('Connexion:');
+ *      const basicAuth: BasicAuth = new BasicAuth('Connexion:');
  *
  *      basicAuth.onSuccess((answer) => {
  *        console.log(answer);
@@ -41,6 +41,7 @@ class ConsoleBasicAuthPrompt extends ConsoleAbstractPrompt implements ConsoleBas
     this._question = {
       ...this.getQuestion(),
       type: 'basicauth',
+      name: 'basicauth',
       message,
       username: '',
       password: '',

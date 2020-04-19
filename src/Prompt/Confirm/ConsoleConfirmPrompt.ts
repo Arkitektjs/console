@@ -9,9 +9,9 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleConfirmPrompt } from '@arkitektjs/console';
+ *      import { ConsoleConfirmPrompt as Confirm } from '@arkitektjs/console';
  *
- *      const confirm: ConsoleConfirmPrompt = new ConsoleConfirmPrompt('Are you ok?');
+ *      const confirm: Confirm = new Confirm('Are you ok?');
  *
  *      confirm.onSuccess((answer) => {
  *        console.log(answer);
@@ -29,6 +29,7 @@ class ConsoleConfirmPrompt extends ConsoleAbstractPrompt {
     this._question = {
       ...this.getQuestion(),
       type: 'confirm',
+      name: 'confirm',
       message,
     };
   }

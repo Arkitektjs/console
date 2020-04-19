@@ -14,9 +14,9 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleInputPrompt } from '@arkitektjs/console';
+ *      import { ConsoleInputPrompt as Input } from '@arkitektjs/console';
  *
- *      const input: ConsoleInputPrompt = new ConsoleInputPrompt('What your name?');
+ *      const input: Input = new Input('Your name: ');
  *
  *      input.onSuccess((answer) => {
  *        console.log(answer); // { prompt: 'John' }
@@ -39,6 +39,7 @@ class ConsoleInputPrompt extends ConsoleAbstractPrompt implements ConsoleInputPr
     this._question = {
       ...this.getQuestion(),
       type: 'input',
+      name: 'input',
       message,
       initial: '',
     };

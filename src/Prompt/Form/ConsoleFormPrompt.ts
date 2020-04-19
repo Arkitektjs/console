@@ -14,9 +14,9 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleFormPrompt } from '@arkitektjs/console';
+ *      import { ConsoleFormPrompt as Form } from '@arkitektjs/console';
  *
- *      const form: ConsoleFormPrompt = new ConsoleFormPrompt('My form:');
+ *      const form: Form = new Form('My form:');
  *      form.addChoice('name', 'Enter your name');
  *      form.addChoice('description', 'Enter your description');
  *
@@ -41,6 +41,7 @@ class ConsoleFormPrompt extends ConsoleAbstractPrompt implements ConsoleFormProm
     this._question = {
       ...this.getQuestion(),
       type: 'form',
+      name: 'form',
       message,
       choices: [],
     };

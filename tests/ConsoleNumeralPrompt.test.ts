@@ -8,7 +8,7 @@ describe('ConsoleNumeralPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(numeral.getName()).toBe('answer');
+    expect(numeral.getName()).toBe('numeral');
   });
 
   test('message must be: Please enter a number', () => {

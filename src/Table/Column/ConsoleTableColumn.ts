@@ -4,8 +4,8 @@ import {
   WidthValueType,
   PaddingValueType,
   AlignValueType,
-  ConsoleTableColumnInterface as ColumnInterface,
-  ConsoleTableColumnOptionsType as ColumnOptionsType,
+  ConsoleTableColumnInterface,
+  ConsoleTableColumnOptionsType,
 } from './console.table.column';
 
 /**
@@ -36,11 +36,11 @@ import {
  *      table.addRow(row1);
  *      table.print();
  */
-class ConsoleTableColumn implements ColumnInterface {
+class ConsoleTableColumn implements ConsoleTableColumnInterface {
   /**
    * Options type for table column.
    */
-  private _options: ColumnOptionsType;
+  private _options: ConsoleTableColumnOptionsType;
 
   constructor() {
     this._options = {
@@ -139,7 +139,7 @@ class ConsoleTableColumn implements ColumnInterface {
    *
    * @param options - Options to set.
    */
-  public setOptions(options: ColumnOptionsType): this {
+  public setOptions(options: ConsoleTableColumnOptionsType): this {
     this._options = options;
 
     return this;
@@ -148,7 +148,7 @@ class ConsoleTableColumn implements ColumnInterface {
   /**
    * Get options.
    */
-  public getOptions(): ColumnOptionsType {
+  public getOptions(): ConsoleTableColumnOptionsType {
     return this._options;
   }
 }

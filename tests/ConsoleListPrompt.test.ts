@@ -8,7 +8,7 @@ describe('ConsoleListPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(confirm.getName()).toBe('answer');
+    expect(confirm.getName()).toBe('list');
   });
 
   test('message must be: Type comma-separated keywords', () => {

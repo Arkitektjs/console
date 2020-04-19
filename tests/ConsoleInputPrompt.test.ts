@@ -8,7 +8,7 @@ describe('ConsoleInputPrompt', () => {
   });
 
   test('name must be answer', () => {
-    expect(inputPrompt.getName()).toBe('answer');
+    expect(inputPrompt.getName()).toBe('input');
   });
 
   test('message must be: What your name?', () => {

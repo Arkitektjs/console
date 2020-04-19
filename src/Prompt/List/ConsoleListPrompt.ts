@@ -9,9 +9,9 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleListPrompt } from '@arkitektjs/console';
+ *      import { ConsoleListPrompt as List } from '@arkitektjs/console';
  *
- *      const list: ConsoleListPrompt = new ConsoleListPrompt('Type comma-separated keywords');
+ *      const list: List = new List('Type comma-separated keywords');
  *
  *      list.onSuccess((answer) => {
  *        console.log(answer);
@@ -29,6 +29,7 @@ class ConsoleListPrompt extends ConsoleAbstractPrompt {
     this._question = {
       ...this.getQuestion(),
       type: 'list',
+      name: 'list',
       message,
     };
   }

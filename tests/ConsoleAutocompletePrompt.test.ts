@@ -8,7 +8,7 @@ describe('ConsoleAutocompletePrompt', () => {
   });
 
   test('name must be prompt', () => {
-    expect(autocomplete.getName()).toBe('answer');
+    expect(autocomplete.getName()).toBe('autocomplete');
   });
 
   test('message must be: Make your choice:', () => {

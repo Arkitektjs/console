@@ -56,8 +56,6 @@ export type ConsolePromptQuestionType = {
 
   /**
    * Used as the key for the answer on the returned values (answers) object.
-   *
-   * @default 'prompt'
    */
   name: NameValueType;
 

@@ -21,9 +21,9 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleAutocompletePrompt } from '@arkitektjs/console';
+ *      import { ConsoleAutocompletePrompt as Autocomplete } from '@arkitektjs/console';
  *
- *      const autocomplete = new ConsoleAutocompletePrompt('Make your choice: ');
+ *      const autocomplete: Autocomplete = new Autocomplete('Make your choice: ');
  *
  *      autocomplete.setChoices(['Almond', 'Apple', 'Banana', 'Blackberry', 'Blueberry', 'Cherry']);
  *      autocomplete.setName('fruits').setMultiple(true);
@@ -48,6 +48,7 @@ class ConsoleAutocompletePrompt extends ConsoleAbstractPrompt implements Console
     this._question = {
       ...this.getQuestion(),
       type: 'autocomplete',
+      name: 'autocomplete',
       message,
       initial: 0,
       limit: 10,
