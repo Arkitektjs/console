@@ -8,7 +8,7 @@ import { ConsoleRequestInterface, ConsoleRequestOptionType } from './console.req
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleRequest } from '@arkitektjs/console';
+ *      import { ConsoleRequest } from '@deltarm/console';
  *
  *      let request = new ConsoleRequest();
  *

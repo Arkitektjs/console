@@ -12,7 +12,7 @@ import { ConsoleOutputInterface } from './console.output';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleOutput } from '@arkitektjs/console';
+ *      import { ConsoleOutput } from '@deltarm/console';
  *
  *      const output: ConsoleOutput = new ConsoleOutput();
  *      output.tick('green').space().write('Success', 'green').space().ellipsis('green');

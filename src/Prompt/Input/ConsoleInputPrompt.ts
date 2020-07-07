@@ -14,7 +14,7 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleInputPrompt as Input } from '@arkitektjs/console';
+ *      import { ConsoleInputPrompt as Input } from '@deltarm/console';
  *
  *      const input: Input = new Input('Your name: ');
  *

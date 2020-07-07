@@ -1,6 +1,6 @@
 import { prompt as enquirerPrompt } from 'enquirer';
 import {
-  ConsolePromptInterface,
+  ConsolePromptInterface, ConsolePromptQuestionType,
 } from './console.prompt';
 import { ConsoleAbstractPrompt } from './ConsoleAbstractPrompt';
 
@@ -16,7 +16,7 @@ import { ConsoleAbstractPrompt } from './ConsoleAbstractPrompt';
  *        ConsolePasswordPrompt,
  *        ConsoleNumeralPrompt,
  *        ConsolePrompt,
- *      } from '@arkitektjs/console';
+ *      } from '@deltarm/console';
  *
  *      const password: ConsolePasswordPrompt = new ConsolePasswordPrompt('Password: ');
  *      const numeral: ConsoleNumeralPrompt = new ConsoleNumeralPrompt('Number: ');
@@ -75,7 +75,7 @@ class ConsolePrompt extends ConsoleAbstractPrompt {
    * Prompt question.
    */
   public prompt(): this {
-    const prompts: any[] = [];
+    const prompts: ConsolePromptQuestionType[] = [];
     this._prompts.forEach((prompt) => {
       prompts.push(prompt.getQuestion());
     });

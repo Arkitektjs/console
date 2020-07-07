@@ -9,7 +9,7 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleListPrompt as List } from '@arkitektjs/console';
+ *      import { ConsoleListPrompt as List } from '@deltarm/console';
  *
  *      const list: List = new List('Type comma-separated keywords');
  *

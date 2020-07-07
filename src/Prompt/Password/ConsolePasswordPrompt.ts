@@ -9,7 +9,7 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsolePasswordPrompt as Password } from '@arkitektjs/console';
+ *      import { ConsolePasswordPrompt as Password } from '@deltarm/console';
  *
  *      const password: Password = new Password('What is your password?');
  *

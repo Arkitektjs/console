@@ -21,7 +21,7 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleAutocompletePrompt as Autocomplete } from '@arkitektjs/console';
+ *      import { ConsoleAutocompletePrompt as Autocomplete } from '@deltarm/console';
  *
  *      const autocomplete: Autocomplete = new Autocomplete('Make your choice: ');
  *

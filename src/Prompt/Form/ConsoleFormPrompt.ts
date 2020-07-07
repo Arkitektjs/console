@@ -14,7 +14,7 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleFormPrompt as Form } from '@arkitektjs/console';
+ *      import { ConsoleFormPrompt as Form } from '@deltarm/console';
  *
  *      const form: Form = new Form('My form:');
  *      form.addChoice('name', 'Enter your name');

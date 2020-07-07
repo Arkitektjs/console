@@ -9,7 +9,7 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleNumeralPrompt as Numeral } from '@arkitektjs/console';
+ *      import { ConsoleNumeralPrompt as Numeral } from '@deltarm/console';
  *
  *      const numeral: Numeral = new Numeral('Please enter a number');
  *

@@ -9,7 +9,7 @@ import { MessageValueType } from '../console.prompt';
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleConfirmPrompt as Confirm } from '@arkitektjs/console';
+ *      import { ConsoleConfirmPrompt as Confirm } from '@deltarm/console';
  *
  *      const confirm: Confirm = new Confirm('Are you ok?');
  *

@@ -16,7 +16,7 @@ import {
  * @author
  *    name: Franck DIOMANDE
  * @example
- *      import { ConsoleBasicAuthPrompt as BasicAuth } from '@arkitektjs/console';
+ *      import { ConsoleBasicAuthPrompt as BasicAuth } from '@deltarm/console';
  *
  *      const basicAuth: BasicAuth = new BasicAuth('Connexion:');
  *

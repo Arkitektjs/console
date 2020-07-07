@@ -20,7 +20,7 @@ import {
  *        ConsoleTableColumn as Column,
  *        ConsoleTableRow as Row,
  *        ConsoleTable as Table
- *      } from '@arkitektjs/console';
+ *      } from '@deltarm/console';
  *
  *      const col1: Column = new Column();
  *      col1.setText('Column 1');
