@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+mocks/
+tests/
+.eslintignore
+jest.config.js
+package-lock.json
+.circleci/
+.github/
