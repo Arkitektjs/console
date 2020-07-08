@@ -1,7 +1,7 @@
 {
   "name": "@deltarm/console",
   "version": "1.0.0",
-  "description": "",
+  "description": "Classes used for creating command lines.",
   "main": "index.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
