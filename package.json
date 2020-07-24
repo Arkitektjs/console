@@ -1,12 +1,12 @@
 {
-  "name": "@arkitektjs/console",
+  "name": "@deltarm/console",
   "version": "1.0.0",
-  "description": "",
+  "description": "Classes used for creating command lines.",
   "main": "index.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
     "build": "tsc",
-    "docs:json": "typedoc --json dist/docs.json ./src --tsconfig tsconfig.json --mode modules --exclude **/*.json",
+    "docs:json": "typedoc",
     "lint": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc",
     "lint:fix": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc --fix",
     "test": "jest --passWithNoTests",
@@ -16,25 +16,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arkitektjs/console.git"
+    "url": "git+https://github.com/DeltaRM/console.git"
   },
   "keywords": [
-    "arkitekt",
-    "rest",
-    "graphql",
     "request",
-    "response",
-    "client",
-    "server",
-    "browser",
-    "node"
+    "output",
+    "prompt",
+    "table"
   ],
   "author": "Franck DIOMANDE <fkdiomande@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Arkitektjs/console/issues"
+    "url": "https://github.com/DeltaRM/console/issues"
   },
-  "homepage": "https://github.com/Arkitektjs/console#readme",
+  "homepage": "https://github.com/DeltaRM/console#readme",
   "devDependencies": {
     "@types/eslint": "^6.8.0",
     "@types/jest": "^25.2.1",
@@ -49,5 +44,11 @@
     "tsc-watch": "^4.2.3",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.1",
+    "cliui": "^6.0.0",
+    "enquirer": "^2.3.5",
+    "figures": "^3.2.0"
   }
 }

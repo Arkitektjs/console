@@ -1,0 +1,10 @@
+{
+  "mode": "modules",
+  "tsconfig": "tsconfig.json",
+  "exclude": ["**/*.json", "index.ts"],
+  "json": "dist/docs.json",
+  "includeVersion": true,
+  "disableSources": true,
+  "includeDeclarations": true,
+  "excludeExternals": true
+}
